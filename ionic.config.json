@@ -1,0 +1,7 @@
+{
+  "name": "proyectoMantenimiento",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
