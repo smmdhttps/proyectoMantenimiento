@@ -1,1 +1,3 @@
-24
+cd ~/Documents/proyectoMantenimiento
+echo "legacy-peer-deps=true" > .npmrc
+cat .npmrc
