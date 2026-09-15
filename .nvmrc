@@ -1,3 +1,1 @@
-cd ~/Documents/proyectoMantenimiento
-echo "legacy-peer-deps=true" > .npmrc
-cat .npmrc
+24.15.0
