@@ -1,14 +1,28 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {
-  IonHeader, IonToolbar, IonTitle, IonContent, IonList,
-  IonItem, IonLabel, IonItemSliding, IonItemOptions, IonItemOption,
-  IonIcon, IonFab, IonFabButton, AlertController
-} from '@ionic/angular';
+import {IonHeader, 
+        IonToolbar,
+        IonTitle,
+        IonContent,
+        IonList,
+        IonItem, 
+        IonLabel, 
+        IonItemSliding, 
+        IonItemOptions, 
+        IonItemOption,
+        IonIcon, 
+        IonFab, 
+        IonFabButton,
+        IonAvatar,
+        IonBadge,
+        IonButtons,
+        IonBackButton,
+        AlertController
+      } 
+from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { add, createOutline, trashOutline } from 'ionicons/icons';
-
+import { add, createOutline, trashOutline, carSport, carSportOutline } from 'ionicons/icons';
 import { VehiculoI } from '../../models/vehiculo.model';
 import { VehiculoService } from '../../services/vehiculo.service';
 
@@ -17,10 +31,25 @@ import { VehiculoService } from '../../services/vehiculo.service';
   templateUrl: './vehiculos-list.page.html',
   styleUrls: ['./vehiculos-list.page.scss'],
   imports: [
-    IonHeader, IonToolbar, IonTitle, IonContent, IonList,
-    IonItem, IonLabel, IonItemSliding, IonItemOptions, IonItemOption,
-    IonIcon, IonFab, IonFabButton,
-    CommonModule, FormsModule
+        IonHeader, 
+        IonToolbar, 
+        IonTitle, 
+        IonContent, 
+        IonList,
+        IonItem, 
+        IonLabel, 
+        IonItemSliding, 
+        IonItemOptions, 
+        IonItemOption,
+        IonIcon, 
+        IonFab, 
+        IonFabButton,
+        IonAvatar,
+        IonBadge,
+        IonButtons,
+        IonBackButton,
+        CommonModule, 
+        FormsModule
   ]
 })
 export class VehiculosListPage {
@@ -32,7 +61,7 @@ export class VehiculosListPage {
   public misVehiculos = this.vehiculoService.misVehiculos;
 
   constructor() {
-    addIcons({ add, createOutline, trashOutline });
+    addIcons({ add, createOutline, trashOutline, carSport, carSportOutline });
   }
 
   validarVehiculo(vehiculo: VehiculoI) {

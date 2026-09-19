@@ -1,20 +1,29 @@
+
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Mantenimiento Express
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Mantenimiento Express</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="welcome-container">
+    <ion-icon name="car-sport-outline" class="welcome-icon"></ion-icon>
+    <h1>Bienvenido</h1>
+    <p class="welcome-text">
+      Lleva el control de los mantenimientos de tus vehículos de forma fácil y ordenada.
+    </p>
+
+    <ion-button expand="block" size="large" (click)="irAVehiculos()">
+      <ion-icon slot="start" name="car-outline"></ion-icon>
+      Ver mis vehículos
+    </ion-button>
   </div>
 </ion-content>
