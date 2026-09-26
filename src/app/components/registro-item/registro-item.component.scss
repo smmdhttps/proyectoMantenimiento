@@ -1,0 +1,15 @@
+.registro-item {
+  margin: 0 12px 10px 12px;
+  border-radius: 12px;
+  --background: var(--ion-color-light);
+
+  ion-label h2 {
+    font-weight: 600;
+  }
+
+  ion-label p {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}

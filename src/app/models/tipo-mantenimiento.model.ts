@@ -1,4 +1,4 @@
-export interface TipoMantenimiento {
-  id?: string;
+export interface TipoMantenimientoI {
+  id: string;
   nombre: string;
 }

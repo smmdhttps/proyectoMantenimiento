@@ -1,71 +1,43 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import {IonHeader, 
-        IonToolbar,
-        IonTitle,
-        IonContent,
-        IonList,
-        IonItem, 
-        IonLabel, 
-        IonItemSliding, 
-        IonItemOptions, 
-        IonItemOption,
-        IonIcon, 
-        IonFab, 
-        IonFabButton,
-        IonAvatar,
-        IonBadge,
-        IonButtons,
-        IonBackButton,
-        AlertController
-      } 
-from '@ionic/angular';
+import { Router } from '@angular/router';
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent, IonList,
+  IonIcon, IonFab, IonFabButton, IonButtons, IonBackButton,
+  AlertController
+} from '@ionic/angular';
 import { addIcons } from 'ionicons';
-import { add, createOutline, trashOutline, carSport, carSportOutline } from 'ionicons/icons';
+import { add, carSportOutline } from 'ionicons/icons';
+
 import { VehiculoI } from '../../models/vehiculo.model';
 import { VehiculoService } from '../../services/vehiculo.service';
+import { VehiculoCardComponent } from '../../components/vehiculo-card/vehiculo-card.component';
 
 @Component({
   selector: 'app-vehiculos-list',
   templateUrl: './vehiculos-list.page.html',
   styleUrls: ['./vehiculos-list.page.scss'],
   imports: [
-        IonHeader, 
-        IonToolbar, 
-        IonTitle, 
-        IonContent, 
-        IonList,
-        IonItem, 
-        IonLabel, 
-        IonItemSliding, 
-        IonItemOptions, 
-        IonItemOption,
-        IonIcon, 
-        IonFab, 
-        IonFabButton,
-        IonAvatar,
-        IonBadge,
-        IonButtons,
-        IonBackButton,
-        CommonModule, 
-        FormsModule
+    IonHeader, IonToolbar, IonTitle, IonContent, IonList,
+    IonIcon, IonFab, IonFabButton, IonButtons, IonBackButton,
+    CommonModule, FormsModule, VehiculoCardComponent
   ]
 })
 export class VehiculosListPage {
 
   private alertController = inject(AlertController);
   private vehiculoService = inject(VehiculoService);
+  private router = inject(Router);
 
-  public vehiculoSeleccionado: VehiculoI | null = null;
   public misVehiculos = this.vehiculoService.misVehiculos;
 
   constructor() {
-    addIcons({ add, createOutline, trashOutline, carSport, carSportOutline });
+    addIcons({ add, carSportOutline });
   }
 
-  validarVehiculo(vehiculo: VehiculoI) {
-    this.vehiculoSeleccionado = vehiculo;
+  verHistorial(vehiculo: VehiculoI) {
+    this.router.navigate(['/historial', vehiculo.id]);
   }
 
   async agregarVehiculo() {

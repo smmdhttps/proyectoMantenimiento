@@ -3,7 +3,6 @@ import { RouteReuseStrategy, provideRouter, withComponentInputBinding, withPrelo
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 import { environment } from './environments/environment';

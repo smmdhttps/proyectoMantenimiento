@@ -35,3 +35,18 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+/* Fix: texto de labels/inputs en ion-alert no visible en modo oscuro.
+   Ionic usa Shadow DOM, así que se debe usar ::part() en vez de clases normales. */
+ion-alert::part(label) {
+  color: var(--ion-text-color, #000000);
+}
+
+ion-alert::part(input) {
+  color: var(--ion-text-color, #000000);
+}
+
+ion-alert::part(header),
+ion-alert::part(message) {
+  color: var(--ion-text-color, #000000);
+}

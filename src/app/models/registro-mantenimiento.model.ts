@@ -1,7 +1,7 @@
-export interface RegistroMantenimiento {
-  id?: string;
+export interface RegistroMantenimientoI {
+  id: string;
   vehiculoId: string;
   kilometraje: number;
-  fecha: Date;
+  fecha: string;
   tiposMantenimientoIds: string[];
 }

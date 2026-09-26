@@ -1,0 +1,17 @@
+<ion-item class="registro-item">
+  <ion-icon slot="start" name="build-outline" color="primary"></ion-icon>
+  <ion-label>
+    <h2>{{ registro.kilometraje }} km</h2>
+    <p>
+      <ion-icon name="calendar-outline"></ion-icon>
+      {{ registro.fecha | date: 'dd/MM/yyyy' }}
+    </p>
+    <p>{{ nombresTipos }}</p>
+  </ion-label>
+  <ion-icon
+    slot="end"
+    name="trash-outline"
+    color="danger"
+    (click)="eliminar.emit(registro)">
+  </ion-icon>
+</ion-item>
